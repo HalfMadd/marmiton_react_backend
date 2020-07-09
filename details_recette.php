@@ -8,7 +8,7 @@ $obj = json_decode($json,true);
   
 $id_recette = $obj['id_recette'];
 
-$query = "SELECT * FROM recettes WHERE id_recette='$id_recette'";
+$query = "SELECT * FROM recettes WHERE id_recette=".$id_recette;
 
 $result = $con->query($query);
  

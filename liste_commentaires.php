@@ -5,9 +5,9 @@ $json = file_get_contents('php://input');
 
 $obj = json_decode($json,true);
 
-$id_recette = $obj['id_recette'];
+$recette_id = $obj['recette_id'];
  
-$query = "SELECT * from commentaires where recette_id = '$recette_id'
+$query = "SELECT * from commentaires where recette_id = ".$recette_id."
 INNER JOIN users ON users.id_user = commentaire.user_id";
  
 $find = mysqli_fetch_array(mysqli_query($connect,$query));

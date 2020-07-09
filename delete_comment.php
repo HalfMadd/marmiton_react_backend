@@ -7,7 +7,7 @@ $obj = json_decode($json,true);
 
 $id_commentaire = $obj['id_commentaire'];
 
-$query = "DELETE FROM commentaires WHERE id_commentaire = '$id_commentaire' ";
+$query = "DELETE FROM commentaires WHERE id_commentaire = ".$id_commentaire;
 
 $query_result = $connect->query($query);
 

@@ -5,11 +5,12 @@ $json = file_get_contents('php://input');
 
 $obj = json_decode($json,true);
 
+$texte_commentaire = $obj['texte_commentaire'];
 $recette_id = $obj['recette_id'];
 $user_id = $obj['user_id'];
 
 $query = "INSERT INTO commentaires(texte_commentaire, user_id; recette_id) 
-values('$json[texte_commentaire]', '$user_id', '$recette_id')";
+values(".$texte_commentaire.", ".$user_id.", ".$recette_id.")";
 
 $query_result = $connect->query($query);
 

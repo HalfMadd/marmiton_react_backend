@@ -7,7 +7,7 @@ $obj = json_decode($json,true);
 
 $id_recette = $obj['user_id'];
 
-$query = "DELETE FROM recettes WHERE id_recette = '$id_recette' ";
+$query = "DELETE FROM recettes WHERE id_recette = ".$id_recette;
 
 $query_result = $connect->query($query);
 

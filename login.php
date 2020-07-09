@@ -7,7 +7,7 @@ $obj = json_decode($json,true);
  
 $pseudo = $obj['pseudo'];
  
-$query = "SELECT * from users where pseudo = '$pseudo";
+$query = "SELECT * from users where pseudo = ".$pseudo;
  
 $check = mysqli_fetch_array(mysqli_query($connect,$query));
  
